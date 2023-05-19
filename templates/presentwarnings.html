@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block main %}
+    <!-- If the toofast and tooslow dicts are empty, display an h2 "all good" message-->
+    {% if toofastmeds == {} and tooslowmeds == {} %}
+    <h2 class="rounded-text-shadow">All good! No interactions found!</h2>
+    {% endif %}
+    <!-- For every key in the dicts toofastmeds and tooslowmeds, count the number of keys and display "There were SUM affected medications!"-->
+    {% if toofastmeds != {} or tooslowmeds != {} %}
+    <h2 class="rounded-text-shadow">There were {{ count }} affected medications!</h2>
+    <br>
+    {% endif %}
+    <!-- For each key in toofastmeds, show the key as the title and list all the values-->
+    {% if toofastmeds != {} %}
+    <div class="left">
+        <h2 class="rounded-text-shadow">likely too low concentration</h2>
+        <br>
+        {% for key in toofastmeds %}
+        <div class="resultcontainer-left">
+            <h2 class="resulttitle">{{ key }}</h2>
+            <h5>Levels are being decreased by these medications:</h5>
+            <ul class="resultlist">
+                {% for element in toofastmeds[key] %}
+                <li>{{ element }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <!-- For each key in tooslowmeds, show the key as the title and list all the values-->
+    {% if tooslowmeds != {} %}
+    <div class="right">
+        <h2 class="rounded-text-shadow">likely too high concentration</h2>
+        <br>
+        {% for key in tooslowmeds %}
+        <div class="resultcontainer-left">
+            <h2 class="resulttitle">{{ key }}</h2>
+            <h5>Levels are being increased by these medications:</h5>
+            <ul class="resultlist">
+                {% for element in tooslowmeds[key] %}
+                <li>{{ element }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}

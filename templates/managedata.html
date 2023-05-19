@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    MedIntel
+{% endblock %}
+
+{% block main %}
+<h1>MedIntel Data Entry</h1>    
+    <h2>
+        <h3 class="readable">
+            Usage: Enter name of the medicine and the enzymes that it will inhibit, induce, and be metabolized by.
+            <br>
+            <br>
+            Keep using the same name for the same medicine, while adding all the different enzymes that it will interact with!
+        </h3>
+        <br>
+        <form action="/managedata" method="post" class="fourinputshorizontal">
+            <!-- Add input for the name of the medicine thats about to be added-->
+            <input type="text" name="medname" placeholder="Medicine Name" required>
+            <!-- Add input to enter an enzyme that will be inhibited by this medicine-->
+            <input type="text" name="willinhibit" placeholder="Inhibited Enzyme">
+            <!-- Add input to enter an enzyme that will be induced by this medicine-->
+            <input type="text" name="willinduce" placeholder="Induced Enzyme">
+            <!-- Add input to enter the enzymes name that will metabolize this med-->
+            <input type="text" name="metabolizedby" placeholder="Metabolized by">
+            <!-- TODO: Add input to enter a condition that this medicine is used for-->
+            <!--input type="text" name="condition" placeholder="What condition for?" required-->
+            <!-- Add a centered submit button-->
+            <div style="text-align: center;">
+                <input type="submit" value="Add Medicine">
+            </div>
+        </form>
+    </h2>
+    <!-- Add button that takes the user back to homescreen -->
+{% endblock %}

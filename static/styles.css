@@ -1,0 +1,290 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans&display=swap');
+
+body {
+  background-image: url('/static/background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+.left {
+  float: left;
+  width: 50%;
+}
+
+.right {
+  float: right;
+  width: 50%;
+}
+
+.main-display {
+  background-color: white;
+  background-clip: content-box;
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 200;
+  border: 5px solid rgb(0, 0, 0);
+  box-shadow: 5px 5px 0px 5px rgb(0, 0, 0);
+  
+}
+
+/* Styles for rounded SVG icon */
+.round-icon {
+  border-radius: 50%;
+}
+
+.list-container {
+  display: flex; /* Use flexbox layout */
+  /* Stack items horizontally */
+  flex-direction: row;
+  padding: 20px; /* Add padding for spacing */
+  /* Round the edges */
+  border-radius: 20px;
+}
+
+.rounded-input {
+  border-radius: 10px;
+  background-color: rgba(59, 26, 58, 1.0);
+  color: white;
+  outline: none;
+  /* Keep elements below at distance */
+  margin-bottom: 15px;
+}
+
+.rounded-input::placeholder {
+  text-align: center;
+  color: white;
+}
+
+.rounded-submit {
+  border-radius: 10px;
+  background-color:rgba(203,174,172, 1);
+  box-shadow: none;
+  margin: 10px;
+}
+
+.rounded-text {
+  border-radius: 10px;
+  background-color: white;
+  display: inline-block;
+  /* Add some padding left and right, but not top and bottom */
+  padding: 0 10px;
+}
+
+.rounded-text-shadow {
+  border-radius: 10px;
+  background-color: white;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 3px 3px 0px 3px rgb(0, 0, 0);
+  display: inline-block;
+  /* Add some padding left and right, but not top and bottom */
+  padding: 2px 10px;
+}
+
+.rounded-text-shadow-left {
+  float: left;
+  width: 40%;
+  border-radius: 10px;
+  background-color: white;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 3px 3px 0px 3px rgb(0, 0, 0);
+  /* Add some padding left and right, but not top and bottom */
+  padding: 0 10px;
+}
+
+.rounded-text-shadow-right {
+  float: right;
+  width: 40%;
+  border-radius: 10px;
+  background-color: white;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 3px 3px 0px 3px rgb(0, 0, 0);
+  /* Add some padding left and right, but not top and bottom */
+  padding: 0 10px;
+}
+
+.resultcontainer-left {
+  float: left;
+  width: 40%;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 3px 3px 0px 3px rgb(0, 0, 0);
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.resultcontainer-right {
+  float: right;
+  width: 40%;
+  border: 3px solid rgb(0, 0, 0);
+  box-shadow: 3px 3px 0px 3px rgb(0, 0, 0);
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rounded-text-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 50%;  
+  transform: translateX(-50%);
+  border-radius: 10px;
+  background-color: rgba(203,174,172, 0.6);
+  display: inline-block;
+}
+
+.readable {
+  /* Make the text more readable */
+  color: black;
+  background-color: rgba(203,174,172, 0.6);
+  padding: auto;
+}
+
+.fourinputshorizontal {
+  /* Make sure the elements in this form are grouped in rows and columns of equal length */
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-center;
+}
+
+.conditionbox {
+  /* Make the background of this element a rgba color with transparency */
+  background-color: rgba(134, 1, 75, 0.74);
+  /* Make the text more readable */
+  color: white;
+  /* Add padding for spacing */
+  padding: 10px;
+  /* Make sure there is some space between the elements */
+  margin: 10px;
+  /* Round the edges */
+  border-radius: 20px;
+}
+
+nav {
+  position: absolute;
+  display: none;
+  border: 5px solid rgb(0, 0, 0);
+  box-shadow: 5px 5px 0px 5px rgb(0, 0, 0);
+  background-color: white;
+  border-radius: 10px;
+}
+
+nav.active {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  background-color: rgba(203,174,172, 1.0);
+  /*Round the items background edge*/
+  border-radius: 10px;
+  /*Add padding for spacing*/
+  padding: 10px;
+  /*increase the spacing to the next item*/
+  margin: 10px;
+  /* Make the outline a 4px wide red line */
+}
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-bottom: 10px;
+}
+
+.menu-toggle {
+  background: none;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-image: url("/static/icon.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-top {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.2rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 1rem;
+  max-width: 90%;
+  text-align: center;
+  border: 5px solid #000000;
+  border-radius: 20px;
+  box-shadow: 7px 7px 0px 7px#000000;
+}
+
+.title-top h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.title-top h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.resultlist {
+  list-style-type: none;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+.resultlist li {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.resulttitle {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+
+
+
+

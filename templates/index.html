@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    MedIntel
+{% endblock %}
+
+{% block header %}
+<div class="title-top">
+    <h1>
+        MedIntel
+        <br>
+        medicine interaction checker
+    </h1>    
+</div>
+{% endblock %}
+
+{% block main %}
+    <!-- Add required inputs for "MedicineName" and "Illness" that pass these values to /addmed with method POST-->
+    <div class="main-display">
+        <h2 class="rounded-text" style="font-weight: bold; margin-top: 5px;">ADD MEDICINE</h2>
+        <form action="/addmed" method="post">
+            <input class="rounded-input" style="margin-right: 10px; margin-left: 10px" type="text" name="medname" placeholder="Medicine Name" required>
+            <input class="rounded-input" style="margin-right: 10px;" type="text" name="condition" placeholder="What condition for?" required>
+            <input class="rounded-submit" type="submit" value="Add Medicine">
+        </form>
+        <!-- Add Button that lets the program know that no more medicines need to be added.-->
+        <form action="/presentwarnings" method="get">
+            <input class="rounded-submit" style="margin: 10px;" type="submit" value="Run the Check">
+        </form>
+    </div>
+    <!-- Add a List for each key in dictsicks with respective key as title and all the elements of dictsicks["sickness"] = [] as content -->
+    {% if dictsicks != {} %}
+        <div class="list-container">
+            {% for key in dictsicks %}
+            <div class="conditionbox">
+                <h2>    {{ key }}</h2>
+                <ul>
+                    {% for element in dictsicks[key] %}
+                    <li>{{ element.title() }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
